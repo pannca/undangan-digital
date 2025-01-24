@@ -1,61 +1,337 @@
-body {
+/* Global Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Judul */
+body {
+    font-family: "Work Sans", sans-serif;
+    line-height: 1.6;
+    background-color: #fdf3e3;
+    color: #333;
+}
+
+/* Section: Opening */
+.opening {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
 
 .opening::before {
-    position: absolute;
     content: "";
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-image: url(/img/background-judul.jpg);
     background-size: cover;
+    background-position: center;
     z-index: -1;
     filter: brightness(50%);
 }
 
-.opening h3 .opening h2 .opening h4 .opening p {
-    text-shadow: 2px 2px 2px black;
+.opening h2, .opening h3, .opening h4, .opening p {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 15px;
 }
 
-.opening {
-    position: relative;
-    height: 100vh;
-}
-
-.opening .judul {
-    text-align: center;
-    color: white;
-    position: absolute;
-    left: 25%;
-    top: 30%;
-}
-
-.judul a {
-    margin-top: 50%;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5%;
-    text-decoration: none;
-    color: black;
-}
-
-.judul a:hover {
-    background-color: black;
-    color: white;
-    transition: 0.5s;
+.judul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
 
 .judul h2 {
-    font-family: "Playwrite IN", serif;
-    ;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
 }
 
-.judul p {
-    font-family: "Work Sans", serif;
-    ;
+.judul a {
+    padding: 12px 25px;
+    border-radius: 35px;
+    text-decoration: none;
+    background: #ffd1a9;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.judul a:hover {
+    background: #333;
+    color: #ffd1a9;
+    transform: translateY(-5px);
+}
+
+/* Section: Informasi */
+.informasi {
+    background-color: #ffe5d9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.informasi h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.container1 img {
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container1 img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.bungkus-text {
+    margin-left: 10%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    gap: 20px;
+}
+
+.bungkus-text .bungkus a {
+    padding: 15px 35px;
+    background: #333;
+    color: #ffe5d9;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.bungkus-text .bungkus a:hover {
+    background: #ffe5d9;
+    color: #333;
+    border: 1px solid #333;
+    transform: translateY(-5px);
+}
+
+.bungkus-text .bungkus h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Section: Tempat */
+.tempat {
+    background-image: url(/img/image.png);
+    background-size: cover;
+    background-position: center;
+    padding: 70px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+}
+
+.bungkus-tempat {
+    background-color: #fdf3e3;
+    padding: 40px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bungkus-tempat h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.bungkus-tempat p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.bungkus-tempat .tanggal-akad {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.bungkus-tempat a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #333;
+    color: #ffe5d9;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.bungkus-tempat a:hover {
+    background-color: #ffe5d9;
+    color: #333;
+    border: 1px solid #333;
+    transform: translateY(-5px);
+}
+
+/* lokasi */
+.lokasi {
+    background-color: #ffe5d9;
+    padding: 50px;
+}
+
+.lokasi h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+/* Section: Our Moment */
+.momen {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(/img/moments.png) no-repeat center center/cover;
+    color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.momen h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.momen .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.momen .container .image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.momen .container .image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.momen .container .image img:hover {
+    transform: scale(1.1);
+}
+
+.momen .container .image:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Optional text inside the image container */
+.momen .container .image .text-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .momen h1 {
+        font-size: 2.5rem;
+    }
+
+    .momen .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .momen .container .image {
+        max-width: 100%;
+    }
+}
+
+/* Section: Penutup */
+.penutup {
+    padding-bottom: 65px;
+}
+
+.penutup .container {
+    background-color: #ffe5d9; /* Beige */
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    border-radius: 30px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.penutup .container h1 {
+    font-family: "Playfair Display", serif;
+}
+
+.penutup .container p {
+    font-family: "Work Sans", sans-serif;
+}
+
+/* footer */
+.footer {
+    background-color: #ffe5d9;
+    display: flex;
+}
+
+.footer .container p {
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+    color: #333333;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
 }
